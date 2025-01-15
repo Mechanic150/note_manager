@@ -1,3 +1,4 @@
+from pprint import pprint
 notes = [{'Ваше имя': 'Кирилл',
                 'Название заметки': 'Заметка1',
                 'Заголовок 1': 'Список покупок',
@@ -21,11 +22,10 @@ notes = [{'Ваше имя': 'Кирилл',
                 'Дата создания заметки в формате ДД.ММ.ГГГГ': '03.01.2025',
                 'Дата истечения заметки в формате ДД.ММ.ГГГГ': '05.01.2025'}]
 print('Ваши текущие заметки: ')
-print(notes)
+pprint(notes)
 note1_val = notes[0].values()
 note2_val = notes[1].values()
 note3_val = notes[2].values()
-print(note1_val)
 while True:
     answ = input('Вы ходите удалить заметку? (Нажмите Enter или напишите "Стоп"): ')
     if answ == '':
@@ -34,18 +34,18 @@ while True:
             notes.remove(notes[0])
             print('Заметка успешно удалена!')
             print('Обновленный список заметок:')
-            print(notes)
+            pprint(notes)
         elif note_name in note2_val:
             notes.remove(notes[1])
             print('Заметка успешно удалена!')
             print('Обновленный список заметок:')
-            print(notes)
+            pprint(notes)
         elif note_name in note3_val:
             notes.remove(notes[2])
             print('Заметка успешно удалена!')
             print('Обновленный список заметок:')
-            print(notes)
+            pprint(notes)
         else: print('Такой заметки нет')
     if answ == 'Стоп':
         break
-print(notes)
+pprint(notes)
