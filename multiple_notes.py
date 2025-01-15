@@ -1,12 +1,13 @@
+from pprint import pprint
 notes = []
 print('Добро пожаловать в менеджер заметок!')
-name = input('Введите Ваше имя: ')
+#name = input('Введите Ваше имя: ')
 answer = ''
 variants = ['', 'Стоп']
 while True:
     answer = input('Хотите создать новую заметку? (Нажмите Enter или напишите "Стоп"): ')
     if answer == '':
-        note = {'Ваше имя': name,
+        note = {'Ваше имя': input('Введите Ваше имя: '),
                 'Название заметки': input('Название заметки: '),
                 'Заголовок 1': input('Заголовок 1: '),
                 'Заголовок 2': input('Заголовок 2: '),
@@ -17,5 +18,5 @@ while True:
         notes.append(note)
         print('Заметка успешно добавлена!')
     if answer == 'Стоп':
-        print(notes)
+        pprint(notes)
         break
